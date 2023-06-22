@@ -18,8 +18,7 @@ Run `composer require deepeloper/lib-fs dev-1.0.0`.
 ```php
 \deepeloper\Lib\FileSystem\Tools::walkDir(
     "/path/to/dir",
-    function (\SplFileInfo $file, $key, array $args): void
-    {
+    function (\SplFileInfo $file, $key, array $args) {
         // $args["path"] contains passed "/path/to/dir" ($path)
         echo sprintf(
             "[%s] %s%s", $file->isDir() ? "DIR " : "file",
