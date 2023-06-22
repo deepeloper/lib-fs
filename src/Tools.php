@@ -194,9 +194,9 @@ class Tools
                         $contents = file_get_contents($path);
 
                         return
-                            "/" == substr(static::$needle, 0, 1)
+                            str_starts_with(static::$needle, "/")
                                 ? (bool)preg_match(static::$needle, $contents)
-                                : false !== strpos($contents, static::$needle);
+                                : str_contains($contents, static::$needle);
                     }
                 );
                 static::$needle = null;
