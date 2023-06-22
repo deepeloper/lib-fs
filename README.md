@@ -11,7 +11,7 @@
 Look [API documentation](https://deepeloper.github.io/docs/packages/lib-fs/).
 
 ## Installation
-Run `composer require deepeloper/lib-fs dev-1.0.0`.
+Run `composer require deepeloper/lib-fs`.
 
 ## Usage
 ### Tools: walking directory recursively
