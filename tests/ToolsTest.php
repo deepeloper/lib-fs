@@ -7,6 +7,8 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
+declare(strict_types=1);
+
 namespace deepeloper\Lib\FileSystem;
 
 use InvalidArgumentException;
@@ -293,7 +295,7 @@ class ToolsTest extends TestCase
      *
      * @see self::testSearchingCallback()
      */
-    public function storeSearchResults($path, array $args)
+    public function storeSearchResults(string $path, array $args)
     {
         $this->searchResults[] = [
             "path"   => $this->cutTempPath($path),
@@ -376,7 +378,7 @@ class ToolsTest extends TestCase
      *
      * @see self::testSearching()
      */
-    protected function cutTempPath($path)
+    protected function cutTempPath(string $path): string
     {
         /*
         $len = strlen($this->tempPath);
