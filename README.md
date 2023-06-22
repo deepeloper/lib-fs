@@ -4,7 +4,6 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/deepeloper/lib-fs.svg)](http://php.net/)
 [![GitHub license](https://img.shields.io/github/license/deepeloper/lib-fs.svg)](https://github.com/deepeloper/lib-fs/blob/master/LICENSE)
 
-[![Build Status](https://travis-ci.com/deepeloper/lib-fs.svg?branch=master)](https://travis-ci.com/deepeloper/lib-fs)
 [![Code Coverage](https://codecov.io/gh/deepeloper/lib-fs/branch/master/graph/badge.svg)](https://codecov.io/gh/deepeloper/lib-fs)
 [![GitHub issues](https://img.shields.io/github/issues-raw/deepeloper/lib-fs.svg)](https://github.com/deepeloper/lib-fs/issues)
 
@@ -13,7 +12,7 @@
 Look [API documentation](https://deepeloper.github.io/docs/packages/lib-fs/).
 
 ## Installation
-Run `composer require deepeloper/lib-fs ~0.2`.
+Run `composer require deepeloper/lib-fs dev-1.0.0`.
 
 ## Usage
 ### Tools: walking directory recursively
