@@ -9,6 +9,8 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
+declare(strict_types=1);
+
 namespace deepeloper\Lib\FileSystem;
 
 use RuntimeException;
@@ -74,7 +76,7 @@ class Logger
      *
      * @see self::__construct()  $options parameter description
      */
-    public function setDefaults(array $options, $override = false)
+    public function setDefaults(array $options, bool $override = false)
     {
         $this->defaults = $options +
             ($override ? [] : [
@@ -99,7 +101,7 @@ class Logger
      *
      * @see self::__construct()  $options parameter description
      */
-    public function log($message, $path = null, array $options = [])
+    public function log(string $message, string $path = null, array $options = [])
     {
         $options =
             $options +

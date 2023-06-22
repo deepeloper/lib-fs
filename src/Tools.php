@@ -9,6 +9,8 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
+declare(strict_types=1);
+
 namespace deepeloper\Lib\FileSystem;
 
 use FilesystemIterator;
@@ -74,7 +76,7 @@ class Tools
      *
      * @throws InvalidArgumentException  If passed path isn't a directory.
      */
-    public static function walkDir($path, callable $callback)
+    public static function walkDir(string $path, callable $callback)
     {
         $realPath = realpath($path);
         if (!is_string($realPath) || !is_dir($realPath)) {
@@ -107,7 +109,7 @@ class Tools
      *
      * @see http://php.net/manual/en/function.clearstatcache.php  php://clearstatcache()
      */
-    public static function removeDir($path)
+    public static function removeDir(string $path)
     {
         self::walkDir(
             $path,
@@ -165,14 +167,14 @@ class Tools
      * @see http://php.net/manual/en/function.glob.php  php://glob()
      */
     public static function search(
-        $dir,
-        $flags = 0,
+        string $dir,
+        int $flags = 0,
         array $patterns = [],
         array $recursive = [],
-        $needle = null,
+        string $needle = null,
         callable $callback = null,
         array $args = []
-    ) {
+    ): array {
         $args += [
             'path' => $dir,
             'needle' => $needle

@@ -7,6 +7,8 @@
  * @license [MIT](https://opensource.org/licenses/mit-license.php)
  */
 
+declare(strict_types=1);
+
 namespace deepeloper\Lib\FileSystem;
 
 use FilesystemIterator;
@@ -187,7 +189,7 @@ class LoggerTest extends TestCase
      *
      * @internal
      */
-    protected function recreateLogDirectory($path)
+    protected function recreateLogDirectory(string $path)
     {
         if (file_exists($path)) {
             Tools::removeDir($path);
@@ -208,7 +210,7 @@ class LoggerTest extends TestCase
      *
      * @internal
      */
-    protected function getDirectoryAsArray($path)
+    protected function getDirectoryAsArray(string $path): array
     {
         $files = [];
         $dir = iterator_to_array(new RecursiveDirectoryIterator(
