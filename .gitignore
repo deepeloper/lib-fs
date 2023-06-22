@@ -1,0 +1,7 @@
+.idea
+.stuff
+build/logs
+build/output
+output
+vendor
+composer.lock
