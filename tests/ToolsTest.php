@@ -28,12 +28,12 @@ class ToolsTest extends TestCase
     /**
      * Temporary directory path
      *
-     * @var string
+     * @var ?string
      *
      * @see self::createDirStructure()
      * @see self::cutTempPath()
      */
-    protected $tempPath;
+    protected ?string $tempPath = null;
 
     /**
      * Directory structure
@@ -43,7 +43,7 @@ class ToolsTest extends TestCase
      * @see self::testRecursiveWalkDir()
      * @see self::buildDirStructure()
      */
-    protected $dirStructure;
+    protected array $dirStructure;
 
     /**
      * Search results
@@ -53,7 +53,7 @@ class ToolsTest extends TestCase
      * @see self::testSearchingCallback()
      * @see self::storeSearchResults()
      */
-    protected $searchResults;
+    protected array $searchResults;
 
     /**
      * Tests exception when passed wrong path.

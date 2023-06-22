@@ -43,7 +43,7 @@ class Logger
      *
      * @var array
      */
-    protected $defaults;
+    protected array $defaults;
 
     /**
      * Constructor.

@@ -1,2 +1,2 @@
 @cd "../.."
-@call php "build/bin/phpDocumentor.v3.2.1.phar"
+@call php "build/bin/phpDocumentor.v3.3.1.phar"

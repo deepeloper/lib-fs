@@ -31,14 +31,14 @@ class Tools
     /**
      * Used to search string in files
      *
-     * @var string
+     * @var ?string
      *
      * @see self::search()
      * @see self::filterFileByContents()
      *
      * @internal
      */
-    protected static $needle;
+    protected static ?string $needle;
 
     /**
      * Walks directory recursively.
