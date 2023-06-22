@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<phpdocumentor>
-
+<phpdocumentor
+        configVersion="3"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://www.phpdoc.org"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/phpDocumentor/phpDocumentor/master/data/xsd/phpdoc.xsd"
+>
     <title>File system library</title>
-
-    <parser>
-        <default-package-name>lib-fs</default-package-name>
-        <target>build/tmp/api-cache</target>
-    </parser>
-
-    <transformer>
-        <target>build/output/api</target>
-    </transformer>
-
-    <plugins>
-        <plugin path="Core" />
-    </plugins>
-
-    <transformations>
-        <template name="clean" />
-    </transformations>
-
-    <files>
-        <directory>./src</directory>
-    </files>
-
+    <paths>
+        <output>build/output/api</output>
+        <cache>build/tmp/api-cache</cache>
+    </paths>
+    <version number="3.0.0">
+        <api>
+            <source dsn=".">
+                <path>src</path>
+            </source>
+        </api>
+    </version>
+    <template name="default" />
 </phpdocumentor>

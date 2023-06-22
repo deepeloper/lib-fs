@@ -1,3 +1,2 @@
 @cd "../.."
-@call php "vendor/bin/phpdoc"
-@rmdir /S /Q output
+@call php "build/bin/phpDocumentor.v3.2.1.phar"
