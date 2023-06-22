@@ -22,7 +22,7 @@ use RuntimeException;
  * ```php
  * $logger = new \deepeloper\Lib\FileSystem\Logger([
  *     'path'    => "/path/to/log",
- *     // 'maxSize' => int maxSize,   // Logger::DEFAULT_MAX_SIZE by default.
+ *     // 'maxSize' => int maxSize,   // self::DEFAULT_MAX_SIZE by default.
  *     // 'rotation' => int rotation, // Rotating files number, 0 means no rotation.
  *     // 'rights'    => int rights,  // Uf set after writing to log file chmod() will be called.
  * ]);
@@ -36,7 +36,7 @@ class Logger
      *
      * @var int
      */
-    const DEFAULT_MAX_SIZE = 1048576;
+    public const DEFAULT_MAX_SIZE = 1048576;
 
     /**
      * Default options
@@ -53,12 +53,10 @@ class Logger
      * - 'maxSize'  - max file size,
      * - 'rotation' - number of files to rotate log,
      * - 'rights'   - file mode, chmod() will be skipped if null passed.
-     *
-     * @return void
      */
     public function __construct(array $options = [
         'path'     => null,
-        'maxSize'  => Logger::DEFAULT_MAX_SIZE,
+        'maxSize'  => self::DEFAULT_MAX_SIZE,
         'rotation' => 0,
         'rights'    => null,
     ])
@@ -76,12 +74,12 @@ class Logger
      *
      * @see self::__construct()  $options parameter description
      */
-    public function setDefaults(array $options, bool $override = false)
+    public function setDefaults(array $options, bool $override = false): void
     {
         $this->defaults = $options +
             ($override ? [] : [
                 'path'     => null,
-                'maxSize'  => Logger::DEFAULT_MAX_SIZE,
+                'maxSize'  => self::DEFAULT_MAX_SIZE,
                 'rotation' => 0,
                 'rights'    => null,
             ]);
@@ -91,7 +89,7 @@ class Logger
      * Rotate log files and logs message.
      *
      * @param string $message
-     * @param string $path     If null passed will be used from options
+     * @param ?string $path     If null passed will be used from options
      * @param array  $options
      *
      * @return void
@@ -101,7 +99,7 @@ class Logger
      *
      * @see self::__construct()  $options parameter description
      */
-    public function log(string $message, string $path = null, array $options = [])
+    public function log(string $message, ?string $path = null, array $options = []): void
     {
         $options =
             $options +

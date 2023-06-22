@@ -24,17 +24,6 @@ use SplFileInfo;
  *
  * Tools.
  *
- * <!-- move: index.html -->
- * <ul>
- *     <li><a href="classes/deepeloper.Lib.FileSystem.Tools.html">
- * \deepeloper\Lib\FileSystem\Tools</a> implements various recursively
- * functionality for files and directories.</li>
- *     <li><a href="classes/deepeloper.Lib.FileSystem.Logger.html">
- * \deepeloper\Lib\FileSystem\Logger</a> implements logging functionality
- * supporting files rotation.</li>
- * </ul>
- * <!-- /move -->
- *
  * @static
  */
 class Tools
@@ -76,7 +65,7 @@ class Tools
      *
      * @throws InvalidArgumentException  If passed path isn't a directory.
      */
-    public static function walkDir(string $path, callable $callback)
+    public static function walkDir(string $path, callable $callback): void
     {
         $realPath = realpath($path);
         if (!is_string($realPath) || !is_dir($realPath)) {
@@ -109,7 +98,7 @@ class Tools
      *
      * @see http://php.net/manual/en/function.clearstatcache.php  php://clearstatcache()
      */
-    public static function removeDir(string $path)
+    public static function removeDir(string $path): void
     {
         self::walkDir(
             $path,
@@ -157,8 +146,8 @@ class Tools
      * @param int      $flags      Flags (php://glob())
      * @param array    $patterns   File name patterns (php://glob())
      * @param array    $recursive  Subdirectory name patterns (php://glob())
-     * @param string   $needle     String to search in files, if starts with "/" processes like regular expression
-     * @param callback $callback   If passed empty array will be returned and callback will be called
+     * @param ?string   $needle     String to search in files, if starts with "/" processes like regular expression
+     * @param ?callback $callback   If passed empty array will be returned and callback will be called
      *                             on every found file/directory
      * @param array    $args       Callback args
      *

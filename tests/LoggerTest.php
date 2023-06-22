@@ -27,7 +27,7 @@ class LoggerTest extends TestCase
      *
      * @vat int
      */
-    const LOG_DIRECTORY_RIGHTS = 0777;
+    public const LOG_DIRECTORY_RIGHTS = 0777;
 
     /**
      * Tests exception with empty path.
@@ -36,10 +36,8 @@ class LoggerTest extends TestCase
      *
      * @cover deepeloper\Lib\FileSystem\Logger::__construct()
      * @cover deepeloper\Lib\FileSystem\Logger::log()
-     *
-     * @return void
      */
-    public function testLoggingWithEmptyPath()
+    public function testLoggingWithEmptyPath(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage("Missing path");
@@ -55,10 +53,8 @@ class LoggerTest extends TestCase
      *
      * @cover deepeloper\Lib\FileSystem\Logger::__construct()
      * @cover deepeloper\Lib\FileSystem\Logger::log()
-     *
-     * @return void
      */
-    public function testLoggingWithInvalidPath()
+    public function testLoggingWithInvalidPath(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage("Invalid directory \"/path/to/unknown\"");
@@ -75,10 +71,8 @@ class LoggerTest extends TestCase
      * @cover deepeloper\Lib\FileSystem\Logger::__construct()
      * @cover deepeloper\Lib\FileSystem\Logger::log()
      * @cover deepeloper\Lib\FileSystem\Logger::setDefaults()
-     *
-     * @return void
      */
-    public function testLogging()
+    public function testLogging(): void
     {
         $dir = implode(
             DIRECTORY_SEPARATOR,
@@ -186,10 +180,8 @@ class LoggerTest extends TestCase
      * @return void
      *
      * @see self::testLogging()
-     *
-     * @internal
      */
-    protected function recreateLogDirectory(string $path)
+    protected function recreateLogDirectory(string $path): void
     {
         if (file_exists($path)) {
             Tools::removeDir($path);

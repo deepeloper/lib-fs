@@ -23,7 +23,7 @@ class ToolsTest extends TestCase
     /**
      * Access rights for temporary directory
      */
-    const RIGHTS = 0777;
+    public const RIGHTS = 0777;
 
     /**
      * Temporary directory path
@@ -62,7 +62,7 @@ class ToolsTest extends TestCase
      *
      * @cover deepeloper\Lib\FileSystem\Tools::walkDir()
      */
-    public function testInvalidDir()
+    public function testInvalidDir(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Passed path \"./tests/invalid/path\" (false) isn't a directory");
@@ -77,7 +77,7 @@ class ToolsTest extends TestCase
      *
      * @cover deepeloper\Lib\FileSystem\Tools::walkDir()
      */
-    public function testWalking()
+    public function testWalking(): void
     {
         $this->dirStructure = [];
         $this->createDirStructure();
@@ -105,7 +105,7 @@ class ToolsTest extends TestCase
      *
      * @cover deepeloper\Lib\FileSystem\Tools::removeDir()
      */
-    public function testRemoving()
+    public function testRemoving(): void
     {
         $this->createDirStructure();
         Tools::removeDir($this->tempPath);
@@ -119,7 +119,7 @@ class ToolsTest extends TestCase
      *
      * @cover deepeloper\Lib\FileSystem\Tools::search()
      */
-    public function testSearching()
+    public function testSearching(): void
     {
         $this->createDirStructure();
 
@@ -222,7 +222,7 @@ class ToolsTest extends TestCase
      *
      * @cover deepeloper\Lib\FileSystem\Tools::search()
      */
-    public function testSearchingCallback()
+    public function testSearchingCallback(): void
     {
         $this->createDirStructure();
         $this->searchResults = [];
@@ -276,7 +276,7 @@ class ToolsTest extends TestCase
      *
      * @see self::testRemove()
      */
-    public function buildDirStructure(SplFileInfo $file)
+    public function buildDirStructure(SplFileInfo $file): void
     {
         $this->dirStructure[] = str_replace(DIRECTORY_SEPARATOR, "/", sprintf(
             "[%s] %s",
@@ -295,7 +295,7 @@ class ToolsTest extends TestCase
      *
      * @see self::testSearchingCallback()
      */
-    public function storeSearchResults(string $path, array $args)
+    public function storeSearchResults(string $path, array $args): void
     {
         $this->searchResults[] = [
             "path"   => $this->cutTempPath($path),
@@ -308,7 +308,7 @@ class ToolsTest extends TestCase
      *
      * @return void
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         if (!is_null($this->tempPath) && is_dir($this->tempPath)) {
             Tools::removeDir($this->tempPath);
@@ -324,7 +324,7 @@ class ToolsTest extends TestCase
      *
      * @return void
      */
-    protected function createDirStructure()
+    protected function createDirStructure(): void
     {
         $this->tempPath = implode(
             DIRECTORY_SEPARATOR,
@@ -335,13 +335,13 @@ class ToolsTest extends TestCase
             [$this->tempPath, "dir1", "dir11", "dir111"]
         );
         $umask = umask(0);
-        mkdir($deepPath, ToolsTest::RIGHTS, true);
+        mkdir($deepPath, self::RIGHTS, true);
         mkdir(
             implode(
                 DIRECTORY_SEPARATOR,
                 [$this->tempPath, "dir2", "dir22"]
             ),
-            ToolsTest::RIGHTS,
+            self::RIGHTS,
             true
         );
         mkdir(
@@ -349,7 +349,7 @@ class ToolsTest extends TestCase
                 DIRECTORY_SEPARATOR,
                 [$this->tempPath, "dir3"]
             ),
-            ToolsTest::RIGHTS,
+            self::RIGHTS,
             true
         );
         umask($umask);
