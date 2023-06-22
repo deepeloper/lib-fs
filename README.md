@@ -4,7 +4,6 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/deepeloper/lib-fs.svg)](http://php.net/)
 [![GitHub license](https://img.shields.io/github/license/deepeloper/lib-fs.svg)](https://github.com/deepeloper/lib-fs/blob/master/LICENSE)
 
-[![Code Coverage](https://codecov.io/gh/deepeloper/lib-fs/branch/master/graph/badge.svg)](https://codecov.io/gh/deepeloper/lib-fs)
 [![GitHub issues](https://img.shields.io/github/issues-raw/deepeloper/lib-fs.svg)](https://github.com/deepeloper/lib-fs/issues)
 
 [![Donate to liberapay](http://img.shields.io/liberapay/receives/don.bidon.svg?logo=liberapay)](https://liberapay.com/don.bidon/donate)
