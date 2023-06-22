@@ -61,7 +61,7 @@ class LoggerTest extends TestCase
     {
         $this->setExpectedException(
             "RuntimeException",
-            "Invalid directory '/path/to/unknown'"
+            "Invalid directory \"/path/to/unknown\""
         );
 
         $logger = new Logger();

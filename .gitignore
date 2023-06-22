@@ -1,6 +1,7 @@
 .idea
 .stuff
 build/logs
-output
+build/output
+build/tmp
 vendor
 composer.lock

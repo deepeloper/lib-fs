@@ -112,7 +112,7 @@ class Logger
         $realPath = realpath(dirname($path));
         if (false === $realPath) {
             throw new RuntimeException(sprintf(
-                "Invalid directory '%s'",
+                "Invalid directory \"%s\"",
                 $path
             ));
         }
