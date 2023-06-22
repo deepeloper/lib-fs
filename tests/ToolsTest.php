@@ -9,6 +9,7 @@
 
 namespace deepeloper\Lib\FileSystem;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use SplFileInfo;
 
@@ -61,10 +62,9 @@ class ToolsTest extends TestCase
      */
     public function testInvalidDir()
     {
-        $this->setExpectedException(
-            "InvalidArgumentException",
-            "Passed path \"./tests/invalid/path\" (false) isn't a directory"
-        );
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("Passed path \"./tests/invalid/path\" (false) isn't a directory");
+
         Tools::walkDir("./tests/invalid/path", [$this, "buildDirStructure"]);
     }
 

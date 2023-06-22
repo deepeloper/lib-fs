@@ -12,6 +12,7 @@ namespace deepeloper\Lib\FileSystem;
 use FilesystemIterator;
 use PHPUnit\Framework\TestCase;
 use RecursiveDirectoryIterator;
+use RuntimeException;
 use SplFileInfo;
 
 /**
@@ -38,10 +39,8 @@ class LoggerTest extends TestCase
      */
     public function testLoggingWithEmptyPath()
     {
-        $this->setExpectedException(
-            "RuntimeException",
-            "Missing path"
-        );
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage("Missing path");
 
         $logger = new Logger();
         $logger->log("");
@@ -59,10 +58,8 @@ class LoggerTest extends TestCase
      */
     public function testLoggingWithInvalidPath()
     {
-        $this->setExpectedException(
-            "RuntimeException",
-            "Invalid directory \"/path/to/unknown\""
-        );
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage("Invalid directory \"/path/to/unknown\"");
 
         $logger = new Logger();
         $logger->log("", "/path/to/unknown");
