@@ -65,5 +65,5 @@ $logger = new \deepeloper\Lib\FileSystem\Logger([
 $logger->log("Foo");
 ```
 
-## Donate
-[Yandex.Money, Visa, MasterCard, Maestro](https://money.yandex.ru/to/41001351141494) or visit [Liberapay](https://liberapay.com/don.bidon/donate).
+## Donation
+[Yandex.Money, Visa, MasterCard, Maestro](https://money.yandex.ru/to/41001351141494).
