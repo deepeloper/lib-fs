@@ -1,14 +1,11 @@
 # File system library
-[![Latest Stable Version](https://img.shields.io/packagist/v/deepeloper/lib-fs.svg?style=flat-square)](https://packagist.org/packages/deepeloper/lib-fs)
-[![Packagist](https://img.shields.io/packagist/dt/deepeloper/lib-fs.svg)](https://packagist.org/packages/deepeloper/lib-fs)
+[![Packagist version](https://img.shields.io/packagist/v/deepeloper/lib-fs)](https://packagist.org/packages/deepeloper/lib-fs)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/deepeloper/lib-fs.svg)](http://php.net/)
 [![GitHub license](https://img.shields.io/github/license/deepeloper/lib-fs.svg)](https://github.com/deepeloper/lib-fs/blob/master/LICENSE)
-
 [![GitHub issues](https://img.shields.io/github/issues-raw/deepeloper/lib-fs.svg)](https://github.com/deepeloper/lib-fs/issues)
+[![Packagist](https://img.shields.io/packagist/dt/deepeloper/lib-fs.svg)](https://packagist.org/packages/deepeloper/lib-fs)
 
-[![Donate to liberapay](http://img.shields.io/liberapay/receives/don.bidon.svg?logo=liberapay)](https://liberapay.com/don.bidon/donate)
-
-Look [API documentation](https://deepeloper.github.io/docs/packages/lib-fs/).
+[![Donation](https://img.shields.io/badge/Donation-Visa,%20MasterCard,%20Maestro,%20UnionPay,%20YooMoney,%20ÌÈÐ-red)](https://yoomoney.ru/to/41001351141494)
 
 ## Installation
 Run `composer require deepeloper/lib-fs`.
@@ -45,8 +42,8 @@ Run `composer require deepeloper/lib-fs`.
     "needle",    // String to search in files, if starts with "/" processes like regular expression
     function ($path, array $args)
     {
-        // $args["path"] contains passed "/path/to/dir" ($dir)
-        // $args["needle"] contains passed "needle" ($needle)
+        // $args['path'] contains passed "/path/to/dir" ($dir)
+        // $args['needle'] contains passed "needle" ($needle)
         $contents = file_get_contents($path);
         $contents = preg_replace("/needle/", "replacement", $contents);
         file_put_contents($path, $contents);
@@ -64,6 +61,3 @@ $logger = new \deepeloper\Lib\FileSystem\Logger([
 ]);
 $logger->log("Foo");
 ```
-
-## Donation
-[Yandex.Money, Visa, MasterCard, Maestro](https://money.yandex.ru/to/41001351141494).
