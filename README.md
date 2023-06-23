@@ -5,7 +5,7 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/deepeloper/lib-fs.svg)](https://github.com/deepeloper/lib-fs/issues)
 [![Packagist](https://img.shields.io/packagist/dt/deepeloper/lib-fs.svg)](https://packagist.org/packages/deepeloper/lib-fs)
 
-[![Donation](https://img.shields.io/badge/Donation-Visa,%20MasterCard,%20Maestro,%20UnionPay,%20YooMoney,%20Ã»–-red)](https://yoomoney.ru/to/41001351141494)
+[![Donation](https://img.shields.io/badge/Donation-Visa,%20MasterCard,%20Maestro,%20UnionPay,%20YooMoney,%20–ú–ò–†-red)](https://yoomoney.ru/to/41001351141494)
 
 ## Installation
 Run `composer require deepeloper/lib-fs`.
